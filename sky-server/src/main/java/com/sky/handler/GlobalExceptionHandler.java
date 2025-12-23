@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
      * @param ex
      * @return
      */
-    @ExceptionHandler
+    @ExceptionHandler(BaseException.class)
     public Result exceptionHandler(BaseException ex){
         String message = ex.getMessage();
         if(message.contains("Duplicate entry")) {
@@ -28,8 +28,9 @@ public class GlobalExceptionHandler {
             String msg = username + MessageConstant.ALREADY_EXISTS;
             return Result.error(msg);
         }else{
-            return Result.error(MessageConstant.UNKNOWN_ERROR);
+            return Result.error(message);
         }
     }
+
 
 }
