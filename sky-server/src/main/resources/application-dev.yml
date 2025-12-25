@@ -11,3 +11,7 @@ sky:
     access-key-id: LTAI5tDKTVoHaqdDzMDEiWYv
     access-key-secret: foDv3wnjaAgWP8lrbWbw0P4Eeufznv
     bucket-name: sky-take-out-zmt
+  redis:
+    host: 192.168.150.101
+    port: 6379
+    database: 10
