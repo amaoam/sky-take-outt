@@ -1,14 +1,21 @@
 package com.sky.service;
 
 import com.sky.dto.*;
+import com.sky.vo.OrderPaymentVO;
 import com.sky.vo.OrderSubmitVO;
 
 public interface OrderService {
 
     /**
-     * 用户下单
-     * @param ordersSubmitDTO
+     * 订单支付
+     * @param ordersPaymentDTO
      * @return
      */
-    OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
+    OrderPaymentVO payment(OrdersPaymentDTO ordersPaymentDTO) throws Exception;
+
+    /**
+     * 支付成功，修改订单状态
+     * @param outTradeNo
+     */
+    void paySuccess(String outTradeNo);
 }
