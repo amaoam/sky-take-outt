@@ -28,6 +28,7 @@ public class GlobalExceptionHandler {
             String msg = username + MessageConstant.ALREADY_EXISTS;
             return Result.error(msg);
         }else{
+            log.error("捕获到异常：", ex);
             return Result.error(message);
         }
     }
